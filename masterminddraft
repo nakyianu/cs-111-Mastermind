@@ -1,0 +1,79 @@
+# play list
+
+# class for the balls(self, color, position)
+#     color: 
+#     position: input is the click
+#     diameter
+
+
+# class feedback balls(color)   
+#     color
+#     diameter
+    
+
+# class for rows(list of balls, feedback list)
+#     for each item in the list it draws the balls
+#             center = center + diameter
+#     for item in feedback list
+#         draw feedback balls(item)
+#         center = center + diameter
+
+# human mastmind function
+#     human inputs list of colors in order
+#     count = 1
+#     playlist = []
+#      for item in list:
+#         playlist.append(Mainball(item, list.index(item)))
+#         count += 1
+
+
+
+#     append row to play list
+
+# human codebreaker function
+#     append row to play list
+
+# play function(human):
+#     if human == mastermind
+#         human mastermind function
+#     else:
+#         human codebreaker function
+#     increase column number by 1 after each play
+
+    
+# def positioncheck(guess, listguess, count):
+#     for m in range(count - 1, 0, -1 ):
+#         play = listguess[m].getPlay()
+#         feedback = listguess[m].getFeedback()
+#         if feedback.count("black") == 0:
+#             duplicates = []
+#             for n in range(4):
+#                 if guess[n] == play[n]:
+#                     duplicates.append(guess[n])
+#             if duplicates != []:
+#                 random.shuffle(duplicates)
+#                 for p in range(4):
+#                     if guess[p] in duplicates and guess[p] == duplicates[0]:
+#                         if p != 0:
+#                             guess[p], guess[p - 1] = guess[p - 1], guess[p]
+#                         else: 
+#                             guess[p], guess[3] = guess[3], guess[p]
+#                     elif guess[p] in duplicates:
+#                         guess.pop(p)
+#                         guess.insert(p, duplicates[0])
+#                         duplicates.pop(0)
+#                 return guess
+#     random.shuffle(guess) 
+#     return guess
+    
+# if feedbackCompare.count('white') == 4:            #if it has four whites it shuffles them
+            #     random.shuffle(guessCompare)
+            #     random.shuffle(guessCompare)
+            # else:           # if there are 1 or 2 black it swaps the last two
+            #     guessCompare[2], guessCompare[3] = guessCompare[3], guessCompare[2]
+            # if count > 1: 
+            #     secpreviousfeedback = listguess[count - 2].getFeedback()        #sets the feedback for the second to last guess as secpreviousfeedback
+            #     previousfeedback = listguess[count - 1].getFeedback()           #sets the feedback for the last guess as previousfeedback
+            #     if secpreviousfeedback.count("black") > previousfeedback.count("black"):    #if the number of blacks decreases it shuffles again.
+            #         random.shuffle(guessCompare)
+            #         random.shuffle(guessCompare)
