@@ -11,7 +11,7 @@ class Mainball():
         self.diameter = 52
         self.position = position
 
-    def getColor(self):         #Retrieves the grecolor
+    def getColor(self):         #Retrieves the color
         return self.color
 
     def getPosition(self):      #Retrieves the position
@@ -343,7 +343,7 @@ def humancodebreaker(masterlist, colorlist, count, window):
     feedback = []                                               #creates an empty feeback list to be used as a parameter
     
     for g in range(4):                                          #turns each ball into an object
-        guess[g] = Mainball(guess[g], g + 1)
+        guess[g] = Mainball(guess[g], g)
     play = Column(guess, feedback)                              #saves the guess
     play.columnPlay(guess, count, window)                       #draws each of the four balls guessed   
      
@@ -353,6 +353,7 @@ def humancodebreaker(masterlist, colorlist, count, window):
                 feedback.append(Feedbackball("white"))
             elif masterlist[j] == k.getColor() and j == k.getPosition():        #if the feedback is black it creates a black feedback object
                 feedback.append(Feedbackball("black"))
+    
     
     random.shuffle(feedback)                        #shuffles the feedback so the user can't associate it with the guess
     play.changeFeedback(feedback)                   #updates the feedback for the current guess
@@ -367,7 +368,6 @@ def humancodebreaker(masterlist, colorlist, count, window):
         return replay(colorlist, window)                            #allows user to replay
         
     return humancodebreaker(masterlist, colorlist, count + 1, window)               ##repeats the play, and will continue repeating until count is 10 or the user wins.
-
 
 def gameplay(colorlist):   
     '''Starting point of the game. Let's the user choose between mastermind or codebreaker''' 
